@@ -24,13 +24,14 @@ class Order :Serializable{
 }
 class MainActivity : AppCompatActivity() {
     private lateinit var db: CollectionReference;
-    private var firestore = FirebaseFirestore.getInstance();
+    private lateinit var firestore : FirebaseFirestore
     private var order =Order()
     private lateinit var sp :SharedPreferences;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+//        setContentView(R.layout.activity_main)
         FirebaseApp.initializeApp(this)
+        firestore = FirebaseFirestore.getInstance()
         sp = getSharedPreferences("orderDB", MODE_PRIVATE)
         db = firestore.collection("orders")
         val id = sp.getString("id", "failed").toString()
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
             orderListener()
         }
-        newOrder()
+//        newOrder()
     }
     private fun orderListener()
     {
@@ -88,13 +89,6 @@ class MainActivity : AppCompatActivity() {
     }
     private fun loadEditOrder()
     {
-//        setContentView(R.layout.edit_order_screen)
-//        findViewById<Button>(R.id.buttonCurDel)
-//        findViewById<EditText>(R.id.editTextTextPersonNameCur).setText(order.comment)
-//        findViewById<CheckBox>(R.id.editTextNumberCur2).isChecked = order.tahini
-//        findViewById<CheckBox>(R.id.checkBoxCur).isChecked = order.hummus
-//        findViewById<SeekBar>(R.id.editTextNumber10).progress = order.pickles
-//        findViewById<EditText>(R.id.textView3).setText(order.customerName)
         findViewById<Button>(R.id.button).setOnClickListener{
             val finalDataSet = mapOf(
                 "hummus" to findViewById<CheckBox>(R.id.checkBoxCur).isChecked,
@@ -122,11 +116,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<SeekBar>(R.id.editTextNumber10).setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener
         {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                TODO("Not yet implemented")
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
-                TODO("Not yet implemented")
             }
 
             override fun onStopTrackingTouch(p0: SeekBar?) {
@@ -160,12 +152,11 @@ class MainActivity : AppCompatActivity() {
             newOrder()
         }
     }
-    private fun newOrder()
-    {
+    private fun newOrder() {
         setContentView(R.layout.new_order_layout)
         findViewById<EditText>(R.id.editTextTextPersonNameCur)
-        findViewById<EditText>(R.id.textView3).setText(sp.getString("name",""))
-        findViewById<Button>(R.id.buttonCur).setOnClickListener{view->
+        findViewById<EditText>(R.id.textView3).setText(sp.getString("name", ""))
+        findViewById<Button>(R.id.buttonCur).setOnClickListener { view ->
             val finalDataSet = mapOf(
                 "hummus" to findViewById<CheckBox>(R.id.checkBoxCur).isChecked,
                 "tahini" to findViewById<CheckBox>(R.id.editTextNumberCur2).isChecked,
@@ -178,15 +169,14 @@ class MainActivity : AppCompatActivity() {
             order.tahini = findViewById<CheckBox>(R.id.editTextNumberCur2).isChecked
             order.comment = findViewById<EditText>(R.id.editTextTextPersonNameCur).text.toString()
             order.customerName = findViewById<EditText>(R.id.textView3).text.toString()
-            sp.edit().putString("name",findViewById<EditText>(R.id.textView3).text.toString()).apply()
+            sp.edit().putString("name", findViewById<EditText>(R.id.textView3).text.toString())
+                .apply()
             order.status = "waiting"
             order.pickles = findViewById<SeekBar>(R.id.editTextNumber10).progress
-            sp.edit().putString("username",findViewById<EditText>(R.id.textView3).text.toString()).apply()
+            sp.edit().putString("username", findViewById<EditText>(R.id.textView3).text.toString())
+                .apply()
             db.document(order.id).set(finalDataSet)
-//            orderListener()
         }
-
-
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -198,7 +188,7 @@ class MainActivity : AppCompatActivity() {
             val tahiniEdit = findViewById<CheckBox>(R.id.editTextNumberCur2).isChecked
             val pickles2 = findViewById<SeekBar>(R.id.editTextNumber10).progress
             val comments = findViewById<EditText>(R.id.editTextTextPersonNameCur).text.toString()
-            if(userNameEdit != null && hummusEdit!= null && tahiniEdit!= null && pickles2!=null && comments!=null )
+            if(userNameEdit != null)
             {
                 order.customerName= userNameEdit.text.toString()
                 order.comment  = comments
@@ -214,7 +204,7 @@ class MainActivity : AppCompatActivity() {
             val hummusNew = findViewById<CheckBox>(R.id.checkBoxCur)
             val tahiniNew = findViewById<CheckBox>(R.id.editTextNumberCur2)
             val pickles = findViewById<SeekBar>(R.id.editTextNumber10).progress
-            if(userNameNew != null && commentsNew!= null && hummusNew!= null && tahiniNew!=null && pickles!=null )
+            if(userNameNew != null && commentsNew!= null && hummusNew!= null && tahiniNew!=null)
             {
                 order.customerName= userNameNew.text.toString()
                 order.comment  = commentsNew.text.toString()
