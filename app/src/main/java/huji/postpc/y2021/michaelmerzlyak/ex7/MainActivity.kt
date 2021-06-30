@@ -13,7 +13,7 @@ import java.io.Serializable
 import java.util.*
 
 
-internal class Order :Serializable{
+class Order :Serializable{
     var id = UUID.randomUUID().toString()
     var customerName: String? = null
     var pickles = 0
@@ -130,7 +130,19 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(p0: SeekBar?) {
-                TODO("Not yet implemented")
+                val curProgess = p0!!.progress
+                if(curProgess==0)
+                {
+                    Toast.makeText(applicationContext,"No pickles",Toast.LENGTH_SHORT).show()
+                }
+                else if(curProgess==10)
+                {
+                    Toast.makeText(applicationContext,"Max amount of pickles",Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Toast.makeText(applicationContext, "You chose $curProgess pickles", Toast.LENGTH_SHORT).show()
+                }
             }
 
         })
@@ -235,7 +247,7 @@ class MainActivity : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         order = savedInstanceState.getSerializable("Order") as Order
     }
-
+    fun getOrderForTesting(): Order {return order}
     override fun onResume() {
         super.onResume()
         orderListener()

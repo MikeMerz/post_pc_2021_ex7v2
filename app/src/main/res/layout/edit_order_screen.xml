@@ -8,21 +8,23 @@
 
     <SeekBar
         android:id="@+id/editTextNumber10"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:max="10"
         app:layout_constraintBottom_toTopOf="@+id/editTextNumberCur2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.031"
         app:layout_constraintStart_toEndOf="@+id/textViewCur"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
         android:id="@+id/textViewCur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="80dp"
         android:text="Enter amount of pickles:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,8 +33,8 @@
         android:id="@+id/textViewCur2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="160dp"
         android:text="Enter amount of tahini"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCur" />
@@ -44,10 +46,10 @@
         android:ems="10"
         app:layout_constraintBottom_toTopOf="@+id/checkBoxCur"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.802"
         app:layout_constraintStart_toEndOf="@+id/textViewCur2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.89" />
 
     <TextView
         android:id="@+id/textViewCur3"
@@ -63,13 +65,12 @@
         android:id="@+id/checkBoxCur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CheckBox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toEndOf="@+id/textViewCur3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.471" />
 
     <EditText
         android:id="@+id/editTextTextPersonNameCur"
@@ -77,13 +78,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Comments"
+        android:hint="Comments"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintVertical_bias="0.591" />
 
     <Button
         android:id="@+id/buttonCurDel"
@@ -95,7 +96,7 @@
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintVertical_bias="0.868" />
 
     <Button
         android:id="@+id/button"
@@ -104,22 +105,22 @@
         android:text="UPDATE ORDER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonNameCur"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintVertical_bias="0.179" />
 
     <EditText
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Username"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonNameCur"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCur3"
-        app:layout_constraintVertical_bias="0.539" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

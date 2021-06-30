@@ -23,8 +23,8 @@
         android:id="@+id/textViewCur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="124dp"
         android:text="Enter amount of pickles:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,9 +33,9 @@
         android:id="@+id/textViewCur2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="68dp"
-        android:text="Enter amount of tahini"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="88dp"
+        android:text="Add tahini"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCur" />
 
@@ -55,8 +55,8 @@
         android:id="@+id/textViewCur3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="128dp"
         android:text="Add Hummus"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCur2" />
@@ -67,10 +67,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toEndOf="@+id/textViewCur3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.532" />
 
     <EditText
         android:id="@+id/editTextTextPersonNameCur"
@@ -78,13 +78,13 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Comments"
+        android:hint="Comments"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431" />
+        app:layout_constraintVertical_bias="0.618" />
 
     <Button
         android:id="@+id/buttonCur"
@@ -102,12 +102,25 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Name"
+        android:hint="Enter UserName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.038"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.096" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Order Sandwitch"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNumber10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.223" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
