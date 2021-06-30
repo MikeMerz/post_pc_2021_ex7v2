@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
             orderListener()
         }
-//        newOrder()
+        newOrder()
     }
     private fun orderListener()
     {
@@ -213,33 +213,11 @@ class MainActivity : AppCompatActivity() {
                 order.pickles = pickles
             }
         }
-
-//        else
-//        {
-//            val userNameEdit = findViewById<EditText>(R.id.textView3)
-//            val hummusEdit = findViewById<CheckBox>(R.id.checkBoxCur).isChecked
-//            val tahiniEdit = findViewById<CheckBox>(R.id.editTextNumberCur2).isChecked
-//            val pickles2 = findViewById<SeekBar>(R.id.editTextNumber10).progress
-//            val comments = findViewById<EditText>(R.id.editTextTextPersonNameCur).text.toString()
-//            if(userNameEdit != null && hummusEdit!= null && tahiniEdit!= null && pickles2!=null && comments!=null )
-//            {
-//                order.customerName= userNameEdit.text.toString()
-//                order.comment  = comments
-//                order.hummus = hummusEdit
-//                order.tahini = tahiniEdit
-//                order.pickles = pickles2
-//            }
-//        }
         outState.putSerializable("Order",order)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         order = savedInstanceState.getSerializable("Order") as Order
-    }
-    fun getOrderForTesting(): Order {return order}
-    override fun onResume() {
-        super.onResume()
-        orderListener()
     }
 }
